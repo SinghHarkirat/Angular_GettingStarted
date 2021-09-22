@@ -1,0 +1,68 @@
+<div class="container my-3">
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Edit user</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="fname">
+                        First Name:
+                    </label>
+                    <input type="text" class="form-control" id="fname"  [(ngModel)]="user[0].firstName">
+                </div>
+                <div class="col-md-6">
+                    <label for="lname">Last name:</label>
+                    <input type="text" class="form-control" id="lname"  [(ngModel)]="user[0].lastName">
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="mobile">Mobile number:</label>
+                    <input type="text" class="form-control" id="mobile" [(ngModel)]="user[0].mobile">
+                </div>
+                <div class="col-md-6">
+                    <label>Gender</label>
+                    <div class="form-check">
+                        <label for="maleRdio">
+                            <input type="radio" name="gender" id="maleRdio" value="male" [(ngModel)]="user[0].gender">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label for="femaleRdio">
+                            <input type="radio" name="gender" id="femaleRdio" value="female" [(ngModel)]="user[0].gender">
+                            Female
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="ageDrop">Age:</label>
+                    <select class="form-control" id="ageDrop" [(ngModel)]="user[0].age">
+                        <option *ngFor='let age of ages'>{{age}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="txtemail">Email:</label>
+                    <input type="text" class="form-control" id="txtemail" [(ngModel)]="user[0].email">
+                </div>
+            </div>
+            <br />
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-primary" (click)="updateUser()">Update</button>&nbsp;
+                    <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
